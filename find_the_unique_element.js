@@ -2,7 +2,7 @@ function findTheUniqueElement(nums) {
     let mapNums = {};
     let result = [];
     for (let i = 0; i < nums.length; i++) {
-        mapNums[nums[i]] = mapNums[nums[i]] ? mapNums[nums[i]] + 1 : 1;
+        mapNums[nums[i]] = (mapNums[nums[i]] || 0) + 1;
     }
 
     for (let key in mapNums) {
@@ -14,6 +14,7 @@ function findTheUniqueElement(nums) {
 }
 
 // Test Cases
+
 // Test case 1: Standard case with a mix of unique and duplicate numbers
 console.log(findTheUniqueElement([1, 2, 1, 3, 2, 4])); // Expected output: [ 3, 4 ]
 
